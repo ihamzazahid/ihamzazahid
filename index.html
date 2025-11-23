@@ -2,237 +2,324 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Hamza Zahid | DevSecOps Engineer</title>
 
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+
+<!-- Font Awesome for icons -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
 <style>
-    body {
-        margin: 0;
-        font-family: "Montserrat", sans-serif;
-        background: #05080F;
-        color: #E6ECEF;
-        line-height: 1.6;
-    }
+/* -------------------- BASIC RESET -------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
 
-    /* Typing Banner */
-    .typing {
-        width: 22ch;
-        white-space: nowrap;
-        overflow: hidden;
-        border-right: 3px solid #00E1FF;
-        animation: typing 3.5s steps(22), blink .75s step-end infinite;
-        font-size: 26px;
-        margin: 60px auto 20px;
-        text-align: center;
-    }
-    @keyframes typing {
-        from { width: 0 }
-    }
-    @keyframes blink {
-        50% { border-color: transparent }
-    }
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: #05080F;
+    color: #E6ECEF;
+    overflow-x: hidden;
+    line-height: 1.6;
+}
 
-    /* Container */
-    .container {
-        width: 85%;
-        max-width: 1000px;
-        margin: auto;
-        padding-bottom: 50px;
-    }
+/* -------------------- TYPING ANIMATION -------------------- */
+.typing-container {
+    text-align: center;
+    margin-top: 60px;
+}
 
-    /* Section Styling */
-    .section {
-        margin: 40px 0;
-        padding: 25px;
-        border: 1px solid rgba(0, 255, 255, 0.2);
-        border-radius: 15px;
-        background: rgba(10, 20, 35, 0.4);
-        box-shadow: 0 0 15px rgba(0,255,255,0.2);
-        transition: 0.3s ease-in-out;
-    }
-    .section:hover {
-        transform: scale(1.02);
-        box-shadow: 0 0 25px rgba(0,255,255,0.45);
-    }
+.typing-text {
+    font-size: 28px;
+    font-weight: 700;
+    color: #00E1FF;
+    border-right: 3px solid #00E1FF;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+    margin: auto;
+    animation: typing 4s steps(35) forwards, blink 0.75s step-end infinite;
+}
 
-    h1, h2 {
-        text-align: center;
-        color: #00E1FF;
-        text-shadow: 0 0 10px #00E1FF;
-    }
+@keyframes typing {
+    from { width: 0; }
+    to { width: 35ch; }
+}
 
-    h3 {
-        color: #4FEAFF;
-        margin-bottom: 10px;
-    }
+@keyframes blink {
+    50% { border-color: transparent; }
+}
 
-    ul {
-        list-style: none;
-        padding-left: 0;
-    }
+/* -------------------- CONTAINER -------------------- */
+.container {
+    width: 85%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px 0;
+}
 
-    ul li::before {
-        content: "▹ ";
-        color: #00E1FF;
-    }
+/* -------------------- SECTIONS -------------------- */
+.section {
+    margin: 40px 0;
+    padding: 30px;
+    border: 1px solid rgba(0, 225, 255, 0.2);
+    border-radius: 15px;
+    background: rgba(10, 20, 35, 0.5);
+    box-shadow: 0 0 20px rgba(0,225,255,0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
 
-    /* Code-Style Blur Boxes */
-    .codebox {
-        background: rgba(0, 20, 30, 0.7);
-        padding: 12px 15px;
-        border-left: 3px solid #00E1FF;
-        font-family: monospace;
-        color: #B8F7FF;
-        margin: 10px 0;
-        border-radius: 6px;
-    }
+.section:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 35px rgba(0,225,255,0.45);
+}
 
-    .footer {
-        text-align: center;
-        margin-top: 50px;
-        color: #4FEAFF;
-        font-size: 14px;
-        opacity: 0.8;
-    }
+h1, h2 {
+    text-align: center;
+    color: #00E1FF;
+    text-shadow: 0 0 10px #00E1FF;
+}
 
-    a {
-        color: #00E1FF;
-        text-decoration: none;
-    }
+h3 {
+    color: #4FEAFF;
+    margin-bottom: 10px;
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+ul li::before {
+    content: "▹ ";
+    color: #00E1FF;
+}
+
+/* -------------------- CODEBOX -------------------- */
+.codebox {
+    background: rgba(0, 20, 30, 0.7);
+    padding: 12px 15px;
+    border-left: 3px solid #00E1FF;
+    font-family: monospace;
+    color: #B8F7FF;
+    margin: 10px 0;
+    border-radius: 6px;
+}
+
+/* -------------------- BUTTONS & LINKS -------------------- */
+a {
+    color: #00E1FF;
+    text-decoration: none;
+    transition: 0.3s;
+}
+a:hover {
+    color: #4FEAFF;
+}
+
+/* -------------------- PROJECT CARDS -------------------- */
+.project-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.project-card {
+    background: rgba(10, 20, 35, 0.7);
+    border-left: 3px solid #00E1FF;
+    border-radius: 12px;
+    width: 250px;
+    padding: 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.project-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px #00E1FF;
+}
+
+/* -------------------- FOOTER -------------------- */
+.footer {
+    text-align: center;
+    margin-top: 50px;
+    color: #4FEAFF;
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+/* -------------------- DARK/LIGHT TOGGLE -------------------- */
+#toggleMode {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 10px;
+    z-index: 999;
+    border: none;
+    border-radius: 5px;
+    background: #00E1FF;
+    color: #05080F;
+    font-weight: bold;
+    cursor: pointer;
+}
+body.light-mode {
+    background: #f4f4f4;
+    color: #111;
+}
+body.light-mode .section {
+    background: rgba(240,240,240,0.8);
+    border-color: #00E1FF;
+}
+body.light-mode h1, body.light-mode h2 {
+    color: #0B3D91;
+    text-shadow: none;
+}
+body.light-mode .codebox {
+    background: rgba(240,240,240,0.6);
+    color: #0B3D91;
+}
+body.light-mode .project-card {
+    background: rgba(240,240,240,0.6);
+    color: #0B3D91;
+}
 </style>
 </head>
 
 <body>
 
-<div class="typing">Hi, I'm Hamza Zahid</div>
+<!-- Dark/Light Toggle -->
+<button id="toggleMode">🌙/☀️</button>
+<script>
+const btn = document.getElementById('toggleMode');
+btn.onclick = () => {
+    document.body.classList.toggle('light-mode');
+};
+</script>
 
-<h1>DevSecOps Engineer | Cyber Defense</h1>
+<!-- Typing Header -->
+<div class="typing-container">
+    <div class="typing-text">DevSecOps Engineer | Cybersecurity | Full-Stack Python</div>
+</div>
+
+<h1>Hamza Zahid</h1>
 
 <div class="container">
 
-    <!-- LinkedIn Bio -->
+    <!-- About Section -->
     <div class="section">
         <h2>About Me</h2>
         <p>
-            DevSecOps Engineer | Digital Transformation | Process Automation | DevOps |
-            Microservices | Network Automation
+            I am a **DevSecOps Engineer** with expertise in building secure, automated, and scalable systems.  
+            Passionate about **process automation**, **network & infrastructure security**, and **software development**.
         </p>
-
         <p>
-            As a DevSecOps Engineer, I specialize in building secure, automated solutions across diverse environments.
-            My expertise spans Python backend engineering, microservices, Docker, Grafana dashboards, API integrations,
-            network automation, vulnerability management, and process automation across multi-stack technologies.
+            My work spans **Python backend development (Flask/Django)**, **microservices & Docker**, **Grafana dashboards**,  
+            **API integrations**, **network automation**, **vulnerability management**, and workflow optimization.
         </p>
-
         <div class="codebox">
-            Always building secure, scalable, cloud-ready systems.
+            Always learning, always automating, always securing.
         </div>
     </div>
 
-    <!-- Skills -->
+    <!-- Skills Section -->
     <div class="section">
-        <h2>Technical Expertise</h2>
+        <h2>Technical Skills</h2>
 
-        <h3>🔥 Python Backend Development</h3>
+        <h3>💻 Python Backend Development</h3>
         <ul>
-            <li>REST API development (Flask, Django)</li>
+            <li>REST APIs with Flask & Django</li>
             <li>Microservices design & architecture</li>
-            <li>Scalable, secure backend engineering</li>
+            <li>Secure, scalable backend solutions</li>
         </ul>
 
-        <h3>🐳 Microservices & Docker</h3>
+        <h3>🐳 Containerization & Microservices</h3>
         <ul>
-            <li>Custom Docker containers & orchestration</li>
-            <li>Portainer-based container management</li>
-            <li>Distributed scalable systems</li>
+            <li>Dockerized applications & orchestration</li>
+            <li>Portainer & Kubernetes management</li>
+            <li>Distributed and scalable systems</li>
         </ul>
 
-        <h3>📊 Grafana Dashboards & Monitoring</h3>
+        <h3>📊 Monitoring & Dashboards</h3>
         <ul>
-            <li>Prometheus + Alertmanager setup</li>
-            <li>Custom collectors for APIs & databases</li>
-            <li>Security-driven visualization dashboards</li>
+            <li>Grafana + Prometheus + Alertmanager</li>
+            <li>Custom metrics collectors</li>
+            <li>Visualization for operational & security data</li>
         </ul>
 
-        <h3>🔗 API Integrations</h3>
+        <h3>🔗 API & Security Integrations</h3>
         <ul>
-            <li>ArcSight SIEM integrations</li>
-            <li>FortiSOAR automation</li>
-            <li>Security platform integrations for CDC</li>
+            <li>SIEM & SOAR tool integrations</li>
+            <li>Security automation & reporting</li>
         </ul>
 
         <h3>🌐 Network Automation</h3>
         <ul>
-            <li>UAM, IPAM, NCM automation</li>
-            <li>Automation via SSH, Telnet, SNMP, WMI</li>
+            <li>UAM, IPAM, NCM automations</li>
+            <li>SSH, Telnet, SNMP, WMI scripting</li>
         </ul>
 
-        <h3>🛡️ Security & Vulnerability Management</h3>
+        <h3>⚙️ Automation & Process Optimization</h3>
         <ul>
-            <li>Patch workflows for Linux & Windows</li>
-            <li>Infrastructure security hardening</li>
-        </ul>
-
-        <h3>⚙️ Process Automation</h3>
-        <ul>
-            <li>GitLab CI/CD pipeline automation</li>
-            <li>RedHat ecosystem integration</li>
-            <li>End-to-end workflow automation</li>
+            <li>CI/CD with GitLab & GitHub Actions</li>
+            <li>RedHat automation workflows</li>
+            <li>Custom scripting for daily operations</li>
         </ul>
     </div>
 
-    <!-- Current Job -->
+    <!-- Projects Section -->
     <div class="section">
-        <h2>Current Role — Du Cyber Defense Center</h2>
+        <h2>Projects</h2>
+        <div class="project-cards">
+            <a href="#" target="_blank">
+                <div class="project-card">
+                    <h3>Security Automation Tool</h3>
+                    <p>Python scripts automating monitoring & reporting tasks.</p>
+                </div>
+            </a>
+            <a href="#" target="_blank">
+                <div class="project-card">
+                    <h3>Network Automation Scripts</h3>
+                    <p>Automating IP management and network monitoring workflows.</p>
+                </div>
+            </a>
+            <a href="#" target="_blank">
+                <div class="project-card">
+                    <h3>Flask Dashboard</h3>
+                    <p>Interactive dashboards displaying security metrics & analytics.</p>
+                </div>
+            </a>
+        </div>
+    </div>
 
-        <p>
-            Working for the Du Cyber Defense Centre, my job bridges development, security, automation,
-            and operational tooling — supporting large-scale security operations through engineering.
-        </p>
-
-        <h3>🛠️ What I Do</h3>
+    <!-- Tools / Tech Stack -->
+    <div class="section">
+        <h2>Tools & Technologies</h2>
         <ul>
-            <li>Automation scripts using Python, Bash, PowerShell</li>
-            <li>Manage internal GitLab instance for CI/CD</li>
-            <li>Create automated HTML/CSS email reports</li>
-            <li>Build Prometheus, Grafana alerting ecosystems</li>
-        </ul>
-
-        <h3>🔧 Integrations</h3>
-        <ul>
-            <li>ArcSight SIEM</li>
-            <li>FortiSOAR</li>
-            <li>Qualys</li>
-            <li>Multiple internal CDC platforms</li>
-        </ul>
-
-        <h3>🗄️ Databases</h3>
-        <ul>
-            <li>PostgreSQL, MySQL, MSSQL, SQLite</li>
-            <li>Performance tuning & CRUD automation</li>
-        </ul>
-
-        <h3>🐧 Linux Work</h3>
-        <ul>
-            <li>Red Hat administration</li>
-            <li>Custom Docker environments for CDC tools</li>
+            <li>Python, Flask, Django</li>
+            <li>Docker, Kubernetes, Portainer</li>
+            <li>Grafana, Prometheus, Alertmanager</li>
+            <li>GitLab CI/CD, GitHub Actions</li>
+            <li>SIEM (ArcSight), SOAR (FortiSOAR)</li>
+            <li>PostgreSQL, MySQL, SQLite</li>
+            <li>SSH, Telnet, SNMP, WMI</li>
         </ul>
     </div>
 
-    <!-- Highlights -->
+    <!-- Contact Section -->
     <div class="section">
-        <h2>Architecture & Engineering Highlights</h2>
-        <ul>
-            <li>Automated network infrastructure & integrations</li>
-            <li>Created microservice-based distributed systems</li>
-            <li>Led project architecture & lifecycle integration</li>
-            <li>Developed visualization & automation scripts</li>
-        </ul>
+        <h2>Contact Me</h2>
+        <p>Email: <a href="mailto:hamzazahidgee@gmail.com">hamzazahidgee@gmail.com</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/ihamzazahid/" target="_blank">linkedin.com/in/ihamzazahid</a></p>
+        <p>GitHub: <a href="https://github.com/ihamzazahid" target="_blank">github.com/ihamzazahid</a></p>
     </div>
 
 </div>
 
 <div class="footer">
-    © 2025 — Designed by Hamza Zahid | DevSecOps Engineer
+    ⚡ Designed & Built by Hamza Zahid | DevSecOps & Cybersecurity Enthusiast
 </div>
 
 </body>
